@@ -38,14 +38,14 @@ func AuthMiddleware() gin.HandlerFunc{
 		initDB.Db.First(&user, userId)
 
 		//用户不存在
-		if user.ID == 0 {
+		if user.ID == 0 || user.UserPassword != claims.UserPassword{
 			ctx.JSON(http.StatusUnauthorized,  gin.H{"code": 401, "msg": "权限不足"})
 			ctx.Abort()
 			return
 		}
 
 		//用户存在 将user信息写入上下文
-		ctx.Set("user", user)
+		ctx.Set("user_id", user.ID)
 
 		ctx.Next()
 	}

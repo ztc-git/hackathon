@@ -17,14 +17,14 @@ func Login(c *gin.Context) {
 
 	//判断手机号是否存在
 	var user model.User
-	initDB.Db.Where("phone=?", userLogin.Phone).First(&user)
+	initDB.Db.Where("user_phone=?", userLogin.Phone).First(&user)
 	if user.ID == 0 {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{"status": "wname"})
 		return
 	}
 
 	//判断密码是否正确
-	if user.Password != userLogin.Password {
+	if user.UserPassword != userLogin.Password {
 		c.JSON(http.StatusBadRequest, gin.H{"status": "wpswd"})
 		return
 	}
@@ -40,8 +40,8 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"statuse": "success",
 		"token": token,
-		"nickname": user.Nickname,
+		"nickname": user.UserNickname,
 		"userid": user.ID,
-		"phone":user.Phone,
+		"phone":user.UserPhone,
 	})
 }

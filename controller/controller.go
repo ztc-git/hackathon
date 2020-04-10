@@ -55,13 +55,12 @@ func Register(c *gin.Context) {
 	//将信息写入数据库
 	newUser := model.User{
 		Model:    gorm.Model{},
-		Nickname: userMsg.Nickname,
-		Phone:    userMsg.Phone,
-		Password: userMsg.Password,
+		UserNickname: userMsg.Nickname,
+		UserPhone:    userMsg.Phone,
+		UserPassword: userMsg.Password,
 	}
 	initDB.Db.Create(&newUser)
 
 	//返回结果
 	c.JSON(http.StatusOK, gin.H{"Msg": "注册成功"})
-
 }

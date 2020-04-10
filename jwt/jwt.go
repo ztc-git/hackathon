@@ -10,18 +10,22 @@ import (
 var jwtKey =[]byte("a_secret_key")
 
 type Claims struct {
+	UserPassword string
 	UserId uint
 	jwt.StandardClaims
 }
 
 func ReleaseToken(user model.User) (string, error) {
+	//var jwtKey =[]byte(user.UserPassword)
+
 	exprationTime := time.Now().Add(7 * 24 * time.Hour)
 	claims := Claims{
 		UserId:         user.ID,
+		UserPassword:	user.UserPassword,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: exprationTime.Unix(),
 			IssuedAt: time.Now().Unix(),
-			Issuer: "NcuHomer",
+			Issuer: "gugugugu",
 			Subject: "user token",
 		},
 	}
@@ -43,6 +47,7 @@ func ParseToken(tokenString string) (*jwt.Token, *Claims, error){
 		func(token *jwt.Token) (i interface{}, err error) {
 			return jwtKey, nil
 		})
+
 
 	return token, claims, err
 }

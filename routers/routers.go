@@ -13,9 +13,19 @@ func SetupRouter() *gin.Engine {
 	router.POST("/api/regist", controller.VerifyPhone)
 	router.POST("/api/regist_confirm", controller.Register)
 	router.POST("/api/login", controller.Login)
-	router.GET("/api/get", func(c *gin.Context) {
-		c.JSON(200,gin.H{"msg":"跨域"})
-	})
+
+
+	r := router.Group("/api", middleware.AuthMiddleware())
+	{
+		r.POST("/release_story", controller.ReleaseStory)
+		//r.GET("/article", controller.Article)
+		r.PUT("/change_password", controller.ChangePassword)
+		r.PUT("/change_nickname_signature", controller.ChangeNicknameOrSignature)
+		r.PUT("/praise_points", controller.PraisePoints)
+		r.POST("/submit_comments", controller.SubmitComments)
+		r.PUT("/comment/praise_points", controller.CommentPraisePoint)
+
+	}
 
 	return router
 }
