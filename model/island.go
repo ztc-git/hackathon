@@ -30,6 +30,7 @@ type SecretIsland struct {
 type StoryIsland struct {
 	gorm.Model
 	AuthorID uint `gorm:"not null"`
+	StoryCategory string `gorm:"not null" json:"story_category"`
 	Title string `gorm:"type varchar(30); not null" json:"title"`
 	StartingParagraph string `gorm:"type:text; not null" json:"starting_paragraph"`
 	PraisePoints uint `gorm:"type:int; default:0"`
@@ -38,8 +39,8 @@ type StoryIsland struct {
 
 type StorySolitaire struct {
 	gorm.Model
-	StoryIslandID uint
-	Text string `gorm:"not null"`
+	StoryIslandID uint `json:"story_island_id"`
+	Text string `gorm:"not null" json:"text"`
 	PraisePoints uint `gorm:"type:int; default:0"`
 	Collection uint `gorm:"type:int; default:0"`
 }

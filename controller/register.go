@@ -29,7 +29,8 @@ func VerifyPhone(c *gin.Context) {
 
 	//发送验证短信
 	captcha := util.GenValidateCode(6)
-	util.SendSms(verifyPhone.Phone, captcha)
+	 util.SendSms(verifyPhone.Phone, captcha)
+
 
 	//返回数据
 	c.JSON(http.StatusOK, gin.H{
@@ -62,5 +63,8 @@ func Register(c *gin.Context) {
 	initDB.Db.Create(&newUser)
 
 	//返回结果
-	c.JSON(http.StatusOK, gin.H{"Msg": "注册成功"})
+	c.JSON(http.StatusOK, gin.H{
+		"status":0,
+		"Msg": "注册成功",
+	})
 }

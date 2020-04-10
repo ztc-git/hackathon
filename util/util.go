@@ -16,7 +16,7 @@ import (
 //判断手机号是否已经被注册
 func IsTelephoneExist(db *gorm.DB, phone string) bool {
 	var user model.User
-	db.Where("phone=?", phone).First(&user)
+	db.Where("user_phone=?", phone).First(&user)
 	if user.ID != 0 {
 		return true
 	}

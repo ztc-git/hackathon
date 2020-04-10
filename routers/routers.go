@@ -9,7 +9,7 @@ import (
 
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
-	router.Use(middleware.Cors())
+	//router.Use(middleware.Cors())
 
 	router.POST("/api/regist", controller.VerifyPhone)
 	router.POST("/api/regist_confirm", controller.Register)
@@ -17,11 +17,15 @@ func SetupRouter() *gin.Engine {
 
 
 	r := router.Group("/api", middleware.AuthMiddleware())
+
 	{
-		r.POST("/release_secret", controller.ReleaseSecret)
-		//r.GET("/article", controller.Article)
 		r.PUT("/change_password", controller.ChangePassword)
 		r.PUT("/change_nickname_signature", controller.ChangeNicknameOrSignature)
+
+	}
+	//secret
+	{
+		r.POST("/release_secret", controller.ReleaseSecret)
 		r.PUT("/praise_points", controller.PraisePoints)
 		r.POST("/submit_comments", controller.SubmitComments)
 		r.PUT("/comment/praise_points", controller.CommentPraisePoint)
@@ -35,7 +39,8 @@ func SetupRouter() *gin.Engine {
 	}
 	//storyIsland
 	{
-		r.POST("/")
+		r.POST("/commit_story", controller.CommitStory)
+		r.POST("/add_story_solitaire", controller.AddStorySolitaire)
 	}
 	return router
 }

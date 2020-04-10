@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0547586-386b-45f3-9cc0-a985740e865d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/SecretIsland.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/SharingIsland.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/register.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/storyIsland.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/article.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/comment.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controller.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/modifyInformation.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/modifyInformation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initDB/initDB.go" beforeDir="false" afterPath="$PROJECT_DIR$/initDB/initDB.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/storyIsland.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/storyIsland.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/cors.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/cors.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/island.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/island.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/register.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/article.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/sendsms.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/sendsms.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/util.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +87,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1586501147521" />
+    <state x="395" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586559497669">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="395" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1586559497669" />
     <state x="351" y="0" key="#go_build_main.go" timestamp="1586323882244">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -104,29 +103,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586321774153" />
-    <state width="1237" height="162" key="GridCell.Tab.0.bottom" timestamp="1586545714251">
+    <state width="1237" height="162" key="GridCell.Tab.0.bottom" timestamp="1586560552257">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586545714251" />
-    <state width="1237" height="162" key="GridCell.Tab.0.center" timestamp="1586545714250">
+    <state width="1237" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586560552257" />
+    <state width="1237" height="162" key="GridCell.Tab.0.center" timestamp="1586560552257">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586545714250" />
-    <state width="1237" height="162" key="GridCell.Tab.0.left" timestamp="1586545714250">
+    <state width="1237" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586560552257" />
+    <state width="1237" height="162" key="GridCell.Tab.0.left" timestamp="1586560552257">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586545714250" />
-    <state width="1237" height="162" key="GridCell.Tab.0.right" timestamp="1586545714251">
+    <state width="1237" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586560552257" />
+    <state width="1237" height="162" key="GridCell.Tab.0.right" timestamp="1586560552257">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586545714251" />
+    <state width="1237" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586560552257" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1586317310287">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1586317310287" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1586515719087">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1586553006821">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1586515719087" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1586553006821" />
   </component>
 </project>

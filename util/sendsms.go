@@ -22,4 +22,5 @@ func SendSms(phone string, captcha string) {
 		log.Println(err)
 	}
 	fmt.Printf("response is %#v\n", response)
+
 }
