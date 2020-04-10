@@ -5,7 +5,6 @@ import (
 	"github.com/jinzhu/gorm"
 	"hackathon/initDB"
 	"hackathon/model"
-	"hackathon/util"
 	"log"
 )
 

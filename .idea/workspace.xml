@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0547586-386b-45f3-9cc0-a985740e865d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/addFriend.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/article.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/change.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/comment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/island.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/article.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initDB/initDB.go" beforeDir="false" afterPath="$PROJECT_DIR$/initDB/initDB.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/jwt/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/Authmiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/Authmiddleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/register.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/article.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
