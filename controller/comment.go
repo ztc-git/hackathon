@@ -9,6 +9,7 @@ import (
 	"log"
 )
 
+//发布评论
 func SubmitComments(c *gin.Context) {
 	var comment model.Comment
 	err := c.BindJSON(&comment)
@@ -35,4 +36,24 @@ func SubmitComments(c *gin.Context) {
 	initDB.Db.Create(&submitComments)
 
 	c.JSON(200, gin.H{"Msg": "评论成功"})
+}
+
+
+//给评论点赞
+func CommentPraisePoint(c *gin.Context) {
+	//获取commentID
+	var praisePoints model.PraisePoints
+	err := c.BindJSON(&praisePoints)
+	if err != nil {
+		log.Println(err.Error())
+		return
+	}
+
+	var comment model.Comment
+	initDB.Db.First(&comment, praisePoints.CommentId)
+	if comment.ID != 0 {
+		comment.PraisePoints += 1
+	}
+	initDB.Db.Model(&comment).Update("praise_points", comment.PraisePoints)
+
 }

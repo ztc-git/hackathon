@@ -19,18 +19,18 @@ func init() {
 		log.Panic(err.Error())
 	}
 
-
 	Db.AutoMigrate(&model.User{})
 	Db.AutoMigrate(&model.UserFriend{})
 	Db.AutoMigrate(&model.Comment{})
 	Db.AutoMigrate(&model.SecretIsland{})
+	Db.AutoMigrate(&model.StoryIsland{})
+	Db.AutoMigrate(&model.StorySolitaire{})
 	Db.Model(&model.UserFriend{}).AddForeignKey("friend_id", "users(id)", "RESTRICT", "RESTRICT")
 	Db.Model(&model.UserFriend{}).AddForeignKey("user_id", "users(id)", "RESTRICT", "RESTRICT")
 	Db.Model(&model.SecretIsland{}).AddForeignKey("author_id", "users(id)", "RESTRICT", "RESTRICT")
 	Db.Model(&model.Comment{}).AddForeignKey("user_id", "users(id)", "RESTRICT", "RESTRICT")
 	Db.Model(&model.Comment{}).AddForeignKey("story_id", "secret_islands(id)", "RESTRICT", "RESTRICT")
-	//Db.Model(&model.Comment{}).AddForeignKey("father_comment_id", "comments(id)", "RESTRICT", "RESTRICT")
-
+	Db.Model(&model.StorySolitaire{}).AddForeignKey("story_island_id", "story_islands(id)","RESTRICT", "RESTRICT")
 }
 
 //关闭数据库

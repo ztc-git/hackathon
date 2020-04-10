@@ -28,5 +28,18 @@ type SecretIsland struct {
 
 //故事岛
 type StoryIsland struct {
+	gorm.Model
+	AuthorID uint `gorm:"not null"`
+	Title string `gorm:"type varchar(30); not null" json:"title"`
+	StartingParagraph string `gorm:"type:text; not null" json:"starting_paragraph"`
+	PraisePoints uint `gorm:"type:int; default:0"`
+	Collection uint `gorm:"type:int; default:0"`
+}
 
+type StorySolitaire struct {
+	gorm.Model
+	StoryIslandID uint
+	Text string `gorm:"not null"`
+	PraisePoints uint `gorm:"type:int; default:0"`
+	Collection uint `gorm:"type:int; default:0"`
 }

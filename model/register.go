@@ -29,7 +29,7 @@ type NicknameSignature struct {
 }
 
 type PraisePoints struct {
-	//CategoriesOfIslands int `json:"categories_of_islands"`
+	CommentId uint `json:"comment_id"`
 	ArticleId uint `json:"article_id"`
 }
 

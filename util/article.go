@@ -14,3 +14,8 @@ func IsFatherCommentExist(ID uint) bool {
 	}
 	return false
 }
+
+//返回的结果
+//func ReturnInformation(articleList []model.SecretIsland) {
+//
+//}
