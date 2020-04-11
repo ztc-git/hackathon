@@ -10,15 +10,23 @@ import (
 //DB数据库
 var Db *gorm.DB
 
-
 //初始化数据库
-func init() {
+func init(){
+
+
 	var err error
-	Db, err = gorm.Open("mysql", "root:210377091ztc@(127.0.0.1:3306)/db1?charset=utf8mb4&parseTime=True&loc=Local")
+	Db, err = gorm.Open("mysql", "root:210377091ztc@(127.0.0.1:3306)/db?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
 		log.Panic(err.Error())
 	}
 
+	initDatabase()
+}
+
+
+
+
+func initDatabase() {
 	Db.AutoMigrate(&model.User{})
 	Db.AutoMigrate(&model.UserFriend{})
 	Db.AutoMigrate(&model.Comment{})
@@ -31,9 +39,4 @@ func init() {
 	Db.Model(&model.Comment{}).AddForeignKey("user_id", "users(id)", "RESTRICT", "RESTRICT")
 	Db.Model(&model.Comment{}).AddForeignKey("story_id", "secret_islands(id)", "RESTRICT", "RESTRICT")
 	Db.Model(&model.StorySolitaire{}).AddForeignKey("story_island_id", "story_islands(id)","RESTRICT", "RESTRICT")
-}
-
-//关闭数据库
-func CloseDB() {
-	Db.Close()
 }

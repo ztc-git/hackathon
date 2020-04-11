@@ -4,18 +4,21 @@ import (
 	"github.com/gin-gonic/gin"
 	"hackathon/initDB"
 	"hackathon/jwt"
-	"hackathon/model"
 	"hackathon/util"
 	"log"
 )
 
+
+type NewPassword struct {
+	NewPassword string `json:"newpassword" binding:"required"`
+}
 //修改密码
 func ChangePassword(c *gin.Context) {
 	//得到user
 	user := util.GetUser(c)
 
 	//得到新密码
-	var newPassword model.NewPassword
+	var newPassword NewPassword
 	err := c.BindJSON(&newPassword)
 	if err != nil {
 		log.Println(err.Error())
@@ -40,12 +43,16 @@ func ChangePassword(c *gin.Context) {
 }
 
 
+type NicknameSignature struct {
+	NickName string `json:"nick_name"`
+	Signature string `json:"signature"`
+}
 //修改个性签名或昵称
 func ChangeNicknameOrSignature(c *gin.Context) {
 	//得到user
 	user := util.GetUser(c)
 
-	var nicknameSignature model.NicknameSignature
+	var nicknameSignature NicknameSignature
 	err := c.BindJSON(&nicknameSignature)
 	if err != nil {
 		log.Println(err.Error())

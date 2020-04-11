@@ -9,7 +9,7 @@ import (
 
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
-	//router.Use(middleware.Cors())
+	router.Use(middleware.Cors())
 
 	router.POST("/api/regist", controller.VerifyPhone)
 	router.POST("/api/regist_confirm", controller.Register)

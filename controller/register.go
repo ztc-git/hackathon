@@ -10,10 +10,15 @@ import (
 	"net/http"
 )
 
+
+type Verifyphone struct {
+	gorm.Model
+	Phone string `json:"phone" binding:"required,len=11"`
+}
 //手机号验证
 func VerifyPhone(c *gin.Context) {
 	//获取需要验证的手机号
-	var verifyPhone model.VerifyPhone
+	var verifyPhone Verifyphone
 	err := c.BindJSON(&verifyPhone)
 	if err != nil {
 		log.Println(err.Error())
@@ -39,10 +44,16 @@ func VerifyPhone(c *gin.Context) {
 	})
 }
 
+
+type BindingUser struct {
+	Phone string `json:"phone" binding:"required,len=11"`
+	Password string `json:"password" binding:"required"`
+	Nickname string `json:"nickname" binding:"required"`
+}
 //注册
 func Register(c *gin.Context) {
 	//获取用户信息
-	var userMsg model.BindingUser
+	var userMsg BindingUser
 	err := c.BindJSON(&userMsg)
 	if err != nil {
 		log.Println(err.Error())

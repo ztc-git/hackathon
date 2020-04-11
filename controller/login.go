@@ -9,10 +9,16 @@ import (
 	"net/http"
 )
 
+
+type UserLogin struct {
+	Phone    string `json:"phone" binding:"required,len=11"`
+	Password string `json:"password"`
+}
+
 //登陆
 func Login(c *gin.Context) {
 	//获取参数
-	var userLogin model.UserLogin
+	var userLogin UserLogin
 	err := c.BindJSON(&userLogin)
 
 	//判断手机号是否存在

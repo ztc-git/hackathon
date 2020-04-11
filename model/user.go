@@ -21,3 +21,13 @@ type Comment struct {
 	CommentText string `gorm:"type:text; not null" json:"comment_text"`
 }
 
+
+//用户信息表
+type User struct{
+	gorm.Model
+	UserPhone string `gorm:"type:varchar(11); not null ; unique" json:"phone" form:"phone" binding:"required,len=11"`
+	UserPassword string `gorm:"type: varchar(20); not null " form:"password" json:"password" binding:"required"`
+	UserNickname string `gorm:"type: varchar(20); not null" form:"nickname" json:"nickname"`
+	UserPersonalSignature string `gorm:"type:varchar(50)"`
+	UserImage string
+}
