@@ -16,3 +16,7 @@
 
 #忽略.sum
 *.sum
+
+#忽略.idea
+*.idea
+
