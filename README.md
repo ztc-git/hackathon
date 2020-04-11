@@ -134,3 +134,116 @@
 ```
 
 
+
+
+- 发表秘密
+
+**请求URL：** 
+- `https:47.99.58.131:8080/api/release_secret `
+  
+**请求方式：**
+- POST 
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+|topic_of_conversation |是  |string |话题   |
+|title |是  |string |标题   |
+|text |是  |string |故事内容   |
+
+
+ **返回示例**
+
+``` 
+{
+    "Msg": "故事发表成功"
+}
+```
+
+
+
+
+
+- 点赞
+
+**请求URL：** 
+- `https:47.99.58.131:8080/api/praise_points `
+  
+**请求方式：**
+- PUT 
+
+**参数：** 
+
+|参数名|必选|类型|说明|UT
+|:----    |:---|:----- |-----   |
+|article_id |是  |string |话题   |
+
+ **返回示例**
+
+``` 
+{
+	"status":0,
+    "Msg": "success"
+}
+```
+
+
+
+
+- 点赞
+
+**请求URL：** 
+- `https:47.99.58.131:8080/api/submit_comments `
+  
+**请求方式：**
+- POST
+
+**参数：** 
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+|user_id |是  |string |用户ID   |
+|story_id |是  |string |秘密ID   |
+|father_comment_id |是  |string |父评论id
+|comment_text |是  |string |评论内容
+
+
+ **返回示例**
+
+``` 
+{
+    "Msg": "评论成功"
+}
+```
+
+
+
+
+- 获得文章列表
+
+**请求URL：** 
+- `https:47.99.58.131:8080/api/getPost
+  
+**请求方式：**
+- GET
+
+
+
+ **返回示例**
+
+``` 
+ {
+            "ID": 2,
+            "CreatedAt": "2020-04-11T18:05:54+08:00",
+            "UpdatedAt": "2020-04-11T18:08:57+08:00",
+            "DeletedAt": null,
+            "topic_of_conversation": "xx",
+            "images_address": "",
+            "AuthorID": 3,
+            "title": "xxxx",
+            "text": "xxxxxx",
+            "PraisePoints": 0,
+            "Collection": 0
+        }
+```
