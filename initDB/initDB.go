@@ -15,14 +15,14 @@ func init(){
 
 
 	var err error
-	Db, err = gorm.Open("mysql", "root:210377091ztc@(127.0.0.1:3306)/db?charset=utf8mb4&parseTime=True&loc=Local")
+	Db, err = gorm.Open("mysql", "root:@(127.0.0.1:3306)/db?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
 		log.Panic(err.Error())
 	}
 
 	initDatabase()
 }
-
+password
 
 
 

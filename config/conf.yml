@@ -4,5 +4,5 @@ datasource:
   port: 3306
   database: db1
   username: root
-  password: 210377091ztc
+  password: password
   charset: utf8

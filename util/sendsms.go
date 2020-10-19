@@ -7,7 +7,7 @@ import (
 )
 
 func SendSms(phone string, captcha string) {
-	client, err := dysmsapi.NewClientWithAccessKey("cn-hangzhou", "LTAI4FkjpgHahLFyxPoWsZyM", "GMcYBb9jGTigejDbdnpmkoeoenOA8I")
+	client, err := dysmsapi.NewClientWithAccessKey("cn-hangzhou", None, None)
 
 	request := dysmsapi.CreateSendSmsRequest()
 	request.Scheme = "https"
